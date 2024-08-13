@@ -1,0 +1,43 @@
+---
+import Terminal from "./icons/Terminal.astro";
+import SectionContainer from "./SectionContainer.astro";
+import ProjectItem from "./ProjectItem.astro";
+
+// images projects
+import img_chimba_mobile from "../assets/images/projects/chimba_mobile.png";
+
+// icons techs
+import Angular from "./icons/frontend/Angular.astro";
+import Flutter from "./icons/Flutter.astro";
+
+const PROJECTS = [
+  {
+    name: "Chimba Blockchain",
+    description:
+      "Chimba is a blockchain platform offering decentralized solutions and services. It provides tools and resources for developers to build and deploy decentralized applications (dApps) on their blockchain network. Chimba emphasizes security, scalability, and ease of use.",
+    techs: [
+      {
+        name: "Angular",
+        icon: Angular,
+      },
+      {
+        name: "Flutter",
+        icon: Flutter,
+      },
+    ],
+    url: "https://chimba.ooo",
+    img: img_chimba_mobile,
+  },
+];
+---
+
+<SectionContainer id="projects" title="projects" class="mt-8 md:mt-20 md:mb-20">
+  <h2
+    class="flex gap-2 text-white text-2xl font-semibold items-center mb-6 md:mb-10"
+  >
+    <Terminal class="size-8" />
+    <span>Project</span>
+  </h2>
+
+  {PROJECTS.map((project) => <ProjectItem {...project} />)}
+</SectionContainer>

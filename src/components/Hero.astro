@@ -1,0 +1,65 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+import Github from "./icons/Github.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Mail from "./icons/Mail.astro";
+import { Image } from "astro:assets";
+
+import picture_profile_linkedln from "../assets/images/profile/picture_profile_linkedln.webp";
+---
+
+<div class={"h-dvh flex flex-col justify-center"}>
+  <SectionContainer>
+    <div class="flex mb-4">
+      <Image
+        src={picture_profile_linkedln}
+        alt="Jeisson Barrera"
+        class="w-24 h-24 md:w-36 md:h-36 rounded-full"
+      />
+      <div class="ms-4 flex flex-col justify-between py-4">
+        <h1 class="text-3xl md:text-6xl text-pretty font-semibold">
+          Hey! I`m Jeisson
+        </h1>
+        <h2 class="w-fit text-xl md:text-4xl font-semibold text-sky-500 shine">
+          Fullstack Developer
+        </h2>
+      </div>
+    </div>
+    <p class="text-sm md:text-xl text-second-title text-pretty font-light">
+      +4 years of experience. <span class="text-orange-400"
+        >Software and Computer Engineer</span
+      > from Medellin, Colombia. Specialized in the development of unique web applications.
+    </p>
+    <div class="flex mt-2 gap-2">
+      <a
+        href="https://www.linkedin.com/in/jbarrera094"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-500 hover:text-white border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1.5 text-center flex items-center gap-2"
+      >
+        <LinkedIn class="size-4 md:size-5" />
+        <span class="hidden md:block">LinkedIn</span>
+      </a>
+
+      <a
+        href="https://github.com/jbarrera094"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-500 hover:text-white border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1.5 text-center flex items-center gap-2"
+      >
+        <Github class="size-4 md:size-5" />
+        <span class="hidden md:block">Github</span>
+      </a>
+
+      <a
+        href="https://github.com/jbarrera094"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-500 hover:text-white border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1.5 text-center flex items-center gap-2"
+      >
+        <Mail class="size-4 md:size-5" />
+        <span class="hidden md:block">jbarrera094@gmail.com</span>
+      </a>
+    </div>
+  </SectionContainer>
+</div>

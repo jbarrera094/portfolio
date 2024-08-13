@@ -1,0 +1,36 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+
+import LinkedIn from "./icons/LinkedIn.astro";
+import Download from "./icons/Download.astro";
+---
+
+<SectionContainer id="contact" title="contact" class="mt-20 mb-20">
+  <h2 class="text-white text-center text-3xl font-medium">
+    Ready to bring your ideas to life?
+  </h2>
+  <p class="text-center font-light text-xl">
+    Click below to chat with me or check out my CV to see how I can boost your
+    project or become part of your team.
+  </p>
+  <div class="flex justify-center mt-4 gap-6">
+    <a
+      href="https://www.linkedin.com/in/jbarrera094"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-blue-500 hover:text-white border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1.5 text-center flex items-center gap-2"
+    >
+      <LinkedIn class="size-5 md:size-6" />
+      <span class="text-base">LinkedIn</span>
+    </a>
+    <a
+      href="/CV_Jeisson_Harvey_Barrera_Sanchez.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-blue-500 hover:text-white border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1.5 text-center flex items-center gap-2"
+    >
+      <Download class="size-5 md:size-6" />
+      <span class="text-base">Download CV</span>
+    </a>
+  </div>
+</SectionContainer>

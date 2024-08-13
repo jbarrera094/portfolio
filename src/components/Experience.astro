@@ -1,0 +1,55 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+import SectionContainer from "./SectionContainer.astro";
+import Briefcase from "./icons/Briefcase.astro";
+
+const EXPERIENCES = [
+  {
+    company: "Energy Master",
+    title: "Full-Stack Developer",
+    date: "At Present",
+    description:
+      "I lead the development of an innovative web platform from scratch. My end-to-end approach spans both frontend and backend, applying sound development principles and adopting a clean architecture to ensure exceptional performance and seamless scalability.",
+  },
+  {
+    company: "Santo Blockchain Labs",
+    title: "Full-Stack Developer",
+    date: "January 2022 - July 2023",
+    description:
+      "Web 2.0/3.0 Frontend and Backend development of Blockchain explorer and development, implementation and deployment of Dapp “Chimba Wallet” for Android and iOS.",
+  },
+  {
+    company: "Urbanik-Hub",
+    title: "CTO",
+    date: "Octuber 2020 - January 2022",
+    description:
+      "Development, implementation and maintenance of the Web platform, in addition to the generation of dynamic reports and the development and implementation of Blockchain-based Digital Badges.",
+  },
+  {
+    company: "EIA University",
+    title: "Teaching Assistant",
+    date: "January 2020 - June 2020",
+    description:
+      "Assist and mentor students in understanding and applying key concepts of the Data Structures course, providing support in problem-solving, project development, and exam preparation.",
+  },
+];
+---
+
+<SectionContainer id="experience" title="experience">
+  <h2 class="flex gap-2 text-white text-2xl font-semibold items-center">
+    <Briefcase class="size-8" />
+    <span>Work Experience</span>
+  </h2>
+
+  <ol class="relative border-s border-gray-700 mt-6 md:mt-10 ms-3">
+    {
+      EXPERIENCES.map((experience) => (
+        <li>
+          <div class="relative">
+            <ExperienceItem {...experience} />
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</SectionContainer>

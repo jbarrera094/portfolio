@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import Link from "./icons/Link.astro";
+import Github from "./icons/Github.astro";
+
+export interface Props {
+  name: string;
+  description: string;
+  techs: Array<{
+    name: string;
+    icon: any;
+  }>;
+  img: ImageMetadata;
+  url?: string;
+  code?: string;
+}
+const { name, description, techs, url, img, code } = Astro.props;
+---
+
+<div
+  class="w-full md:h-64 md:max-h-64 overflow-hidden rounded-md bg-slate-800 flex flex-col md:flex-row"
+>
+  <div class="md:w-min-[38%] md:max-w-[38%] flex items-center overflow-hidden">
+    <Image
+      src={img}
+      alt={name}
+      class="h-full object-cover scale-110 md:scale-100 hover:scale-110 brightness-110 md:brightness-100 hover:brightness-110 transition-all ease-out duration-300"
+    />
+  </div>
+
+  <div class="flex flex-col justify-center p-4 md:px-6 gap-2">
+    <h3 class="font-semibold text-xl text-pretty">{name}</h3>
+    <article class="flex flex-col gap-1">
+      <p class="font-light text-base text-pretty md:text-balance">
+        {description}
+      </p>
+      <ul class="flex gap-2">
+        {
+          techs.map((tech) => (
+            <li class="text-sm bg-gray-900 text-white rounded-md px-2 py-1 flex items-center gap-1">
+              <tech.icon class="size-4" />
+              <span>{tech.name}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </article>
+    <div class="flex gap-2">
+      {
+        url && (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-2 py-1.5 text-center bg-gray-900 border-gray-400 text-gray-400 hover:text-white focus:ring-gray-800 hover:border-gray-900 flex items-center gap-1"
+          >
+            <Link class="size-6" />
+            <span>Preview</span>
+          </a>
+        )
+      }
+      {
+        code && (
+          <a
+            href={code}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border focus:ring-4 focus:outline-none font-medium rounded-lg text-base px-2 py-1.5 text-center bg-gray-900 border-gray-400 text-gray-400 hover:text-white focus:ring-gray-800 hover:border-gray-900 flex items-center gap-1"
+          >
+            <Github class="size-6" />
+            <span>Code</span>
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>

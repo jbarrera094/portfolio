@@ -1,0 +1,91 @@
+---
+import "@fontsource-variable/inter";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Jeisson Barrera" />
+    <meta
+      name="keywords"
+      content="Jeisson Barrera, Fullstack Developer, Software Engineer, Computer Engineer"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+    ></script>
+  </head>
+  <body>
+    <div
+      class="absolute top-0 z-[-2] h-screen w-full bg-dark-50 dark:bg-dark-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,153,255,0.25),rgba(255,255,255,0))]"
+    >
+    </div>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    font-family: "Inter Variable", system-ui, sans-serif;
+  }
+  body {
+    background: #0f172a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  .shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(15, 23, 42, 0.25),
+      rgba(255, 255, 255, 0)
+    );
+    animation: shine 4s infinite;
+  }
+
+  @keyframes shine {
+    to {
+      left: 150%;
+    }
+  }
+</style>

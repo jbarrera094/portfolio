@@ -1,0 +1,47 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+import { Image } from "astro:assets";
+
+import photo_profile from "../assets/images/profile/photo_profile.webp";
+import jbarrera094_emote from "../assets/images/profile/jbarrera094_emote.png";
+---
+
+<SectionContainer
+  id="about-me"
+  title="aboute-me"
+  class="mt-8 md:mt-20 md:mb-20"
+>
+  <h2 class="flex gap-2 text-white text-2xl font-semibold items-center">
+    <Image src={jbarrera094_emote} alt="Jeisson Barrera" class="w-11" />
+    <span>About Me</span>
+  </h2>
+  <section class="mt-2 flex flex-col-reverse md:flex-row gap-4 md:gap-0">
+    <article class="md:w-3/5">
+      <p class="text-pretty font-light text-base mb-2">
+        My name is Jeisson Barrera, but my friends call me Jey. I`m a Fullstack
+        developer with a preference for Backend. I`m currently leading a
+        multinational project where we are renewing the platform with new
+        technologies.
+      </p>
+      <p class="text-pretty font-light text-base mb-2">
+        Some of my achievements include developing an E-Learning platform from
+        scratch on AWS called Urbanik-Hub, as well as creating a Blockchain
+        ecosystem called Chimba, where we developed the Chimba Wallet App with
+        an explorer and a full node.
+      </p>
+      <p class="text-pretty font-light text-base">
+        As an engineer, I have faced challenges that required resourcefulness
+        and communication across different areas. Therefore, my priority is
+        always teamwork, where I enjoy sharing my knowledge and learning from
+        others, even if they are not in my field.
+      </p>
+    </article>
+    <figure class="w-2/5 mx-auto flex justify-center items-center">
+      <Image
+        src={photo_profile}
+        alt="Jeisson Barrera"
+        class="w-60 rounded-lg md:-rotate-12"
+      />
+    </figure>
+  </section>
+</SectionContainer>
