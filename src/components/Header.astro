@@ -13,6 +13,7 @@ import LinkedIn from "./icons/LinkedIn.astro";
       </a>
 
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <!-- Social -->
         <ul class="flex gap-x-2 py-2">
           <li>
             <a
@@ -38,12 +39,11 @@ import LinkedIn from "./icons/LinkedIn.astro";
           </li>
         </ul>
 
+        <!-- Mobile menu button -->
         <button
-          data-collapse-toggle="navbar-sticky"
           type="button"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          aria-controls="navbar-sticky"
-          aria-expanded="false"
+          id="navbar-toggle"
         >
           <span class="sr-only">Open main menu</span>
           <svg
@@ -63,6 +63,7 @@ import LinkedIn from "./icons/LinkedIn.astro";
         </button>
       </div>
 
+      <!-- Nav -->
       <div
         class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
         id="navbar-sticky"
@@ -73,28 +74,28 @@ import LinkedIn from "./icons/LinkedIn.astro";
           <li>
             <a
               href="/#experience"
-              class="block py-2 px-3 md:p-0 hover:text-blue-600 ase-in duration-300"
+              class="block py-2 px-3 md:p-0 hover:text-blue-600 ase-in duration-300 menu-item"
               aria-current="page">Experience</a
             >
           </li>
           <li>
             <a
               href="/#projects"
-              class="block py-2 px-3 md:p-0 hover:text-blue-600 ase-in duration-300"
+              class="block py-2 px-3 md:p-0 hover:text-blue-600 ase-in duration-300 menu-item"
               >Projects</a
             >
           </li>
           <li>
             <a
               href="/#skills"
-              class="block py-2 px-3 md:p-0 hover:text-blue-600 ase-in duration-300"
+              class="block py-2 px-3 md:p-0 hover:text-blue-600 ase-in duration-300 menu-item"
               >Skills</a
             >
           </li>
           <li>
             <a
               href="/#about-me"
-              class="block py-2 px-3 md:p-0 hover:text-blue-600 ase-in duration-300"
+              class="block py-2 px-3 md:p-0 hover:text-blue-600 ase-in duration-300 menu-item"
               >About Me</a
             >
           </li>
@@ -103,3 +104,19 @@ import LinkedIn from "./icons/LinkedIn.astro";
     </div>
   </nav>
 </header>
+
+<script is:inline>
+  const menu = document.getElementById("navbar-sticky");
+  const btnToggleMenu = document.getElementById("navbar-toggle");
+
+  btnToggleMenu.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+
+  document.querySelectorAll(".menu-item").forEach((item) => {
+    item.addEventListener("click", () => {
+      console.log("clicked");
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
