@@ -6,17 +6,31 @@ import Mail from "./icons/Mail.astro";
 import { Image } from "astro:assets";
 
 import picture_profile_linkedln from "../assets/images/profile/picture_profile_linkedln.webp";
+import Download from "./icons/Download.astro";
+import CircleCheck from "./icons/CircleCheck.astro";
 ---
 
 <div class={"h-dvh flex flex-col justify-center"}>
   <SectionContainer>
-    <div class="flex mb-4">
-      <Image
-        src={picture_profile_linkedln}
-        alt="Jeisson Barrera"
-        class="w-24 h-24 md:w-36 md:h-36 rounded-full"
-      />
-      <div class="ms-4 flex flex-col justify-between py-4">
+    <div class="flex mb-4 flex-col md:flex-row items-center">
+      <picture class="relative w-56 h-56 md:w-56 md:h-56 mb-4 md:mb-0">
+        <Image
+          src={picture_profile_linkedln}
+          alt="Jeisson Barrera"
+          class="w-56 h-56 md:w-56 md:h-56 rounded-full object-contain aspect-square"
+        />
+        <span
+          class="absolute -bottom-1 -right-1 bg-white/90 text-[10px] md:text-xs px-1.5 py-0.5 shadow-sm minline-flex items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-green-100 border-green-200 text-green-600 border-2 text-xs font-semibold"
+        >
+          <span class="flex items-center gap-1">
+            <CircleCheck class="lucide lucide-circle-check-big w-3 h-3" />
+            <span class="inline">Available for hire</span>
+          </span>
+        </span>
+      </picture>
+      <div
+        class="ms-4 flex flex-col my-auto md:gap-y-2 items-center md:items-start"
+      >
         <h1 class="text-3xl md:text-6xl text-pretty font-semibold">
           Hey! I`m Jeisson
         </h1>
@@ -25,12 +39,14 @@ import picture_profile_linkedln from "../assets/images/profile/picture_profile_l
         </h2>
       </div>
     </div>
-    <p class="text-sm md:text-xl text-second-title text-pretty font-light">
-      +4 years of experience. <span class="text-orange-400"
+    <p
+      class="text-sm md:text-xl text-second-title text-pretty font-light text-center md:text-left"
+    >
+      +5 years of experience. <span class="text-orange-400"
         >Software and Computer Engineer</span
       > from Medellin, Colombia. Specialized in the development of unique web applications.
     </p>
-    <div class="flex mt-2 gap-2">
+    <div class="flex mt-2 gap-2 justify-center md:justify-start">
       <a
         href="https://www.linkedin.com/in/jbarrera094"
         target="_blank"
@@ -50,7 +66,15 @@ import picture_profile_linkedln from "../assets/images/profile/picture_profile_l
         <Github class="size-4 md:size-5" />
         <span class="hidden md:block">Github</span>
       </a>
-
+      <a
+        href="/CV_Jeisson_Harvey_Barrera_Sanchez.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-blue-500 hover:text-white border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1.5 text-center flex items-center gap-2"
+      >
+        <Download class="size-4 md:size-5" />
+        <span class="hidden md:block">Download CV</span>
+      </a>
       <a
         href="mailto:jbarrera094@gmail.com"
         class="text-blue-500 hover:text-white border border-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-2 py-1.5 text-center flex items-center gap-2"
