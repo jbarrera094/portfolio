@@ -19,20 +19,20 @@ const { company, date, title, description, link } = Astro.props;
   <section
     class="flex flex-col md:min-w-[35%] md:max-w-[35%] md:me-6 mb-4 md:mb-0"
   >
-    <h3 class="text-xl font-semibold text-sky-500 text-pretty">
-      {title}
-    </h3>
     <div class="flex items-center gap-2">
-      <span class="text-lg font-light">{company}</span>
+      <h3 class="text-xl font-semibold text-sky-500 text-pretty">
+        {company}
+      </h3>
 
       {
         link && (
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <ExternalLink class="size-4" />
+            <ExternalLink class="size-4 text-sky-400" />
           </a>
         )
       }
     </div>
+    <span class="text-lg font-light">{title}</span>
     <time class="text-sm
       font-light
       leading-none
