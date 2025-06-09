@@ -5,12 +5,39 @@ import ProjectItem from "./ProjectItem.astro";
 
 // images projects
 import img_chimba_mobile from "../assets/images/projects/chimba_mobile.png";
+import img_pos_system from "../assets/images/projects/pos_dashboard_shot.webp";
+import img_tesla_landing_page from "../assets/images/projects/screen-landing-tesla.webp";
+import img_javascript_quizz from "../assets/images/projects/js_quiz_shot.webp";
 
 // icons techs
 import Angular from "./icons/frontend/Angular.astro";
 import Flutter from "./icons/Flutter.astro";
+import Laravel from "./icons/backend/laravel.astro";
+import MySQL from "./icons/backend/MySQL.astro";
+import AstroFramework from "./icons/frontend/AstroFramework.astro";
+import React from "./icons/frontend/React.astro";
+import MaterialUI from "./icons/frontend/MaterialUI.astro";
+import Zustand from "./icons/frontend/Zustand.astro";
 
 const PROJECTS = [
+  {
+    name: "POS Management and Inventory System",
+    description:
+      "POS Management and Inventory System Project in PHP MySQL Free Download enables you to manage inventory, sales, purchases, customers, invoices, receiving payments, and more. Whether you run a small business or a large company It's the solution you need to manage inventory, purchases and sales – all in one app.",
+    techs: [
+      {
+        name: "Laravel",
+        icon: Laravel,
+      },
+      {
+        name: "MySQL",
+        icon: MySQL,
+      },
+    ],
+    code: "https://github.com/jbarrera094/POS_System",
+    url: "https://stocky.getstocky.com/login",
+    img: img_pos_system,
+  },
   {
     name: "Chimba Blockchain",
     description:
@@ -28,6 +55,41 @@ const PROJECTS = [
     url: "https://chimba.ooo",
     img: img_chimba_mobile,
   },
+  {
+    name: "Tesla Landing Page",
+    description:
+      "Tesla Landing Page is an educational project I developed as a personal challenge to explore modern Frontend development trends. Using cutting-edge technologies and best practices, I recreated Tesla's user experience with a focus on performance and accessibility.",
+    techs: [
+      {
+        name: "Astro",
+        icon: AstroFramework,
+      },
+    ],
+    code: "https://github.com/jbarrera094/landing-tesla",
+    url: "https://jbarrera094.github.io/landing-tesla/",
+    img: img_tesla_landing_page,
+  },
+  {
+    name: "Javascript Quiz",
+    description:
+      "A modern quiz application built with React and TypeScript, showcasing Material UI integration and state management with Zustand. This project demonstrates practical implementation of Material Design components and efficient state management across components.",
+    techs: [
+      {
+        name: "React",
+        icon: React,
+      },
+      {
+        name: "Material UI",
+        icon: MaterialUI,
+      },
+      {
+        name: "Zustand",
+        icon: Zustand,
+      },
+    ],
+    code: "https://github.com/jbarrera094/javascript-quizz",
+    img: img_javascript_quizz,
+  },
 ];
 ---
 
@@ -38,6 +100,7 @@ const PROJECTS = [
     <Terminal class="size-8" />
     <span>Project</span>
   </h2>
-
-  {PROJECTS.map((project) => <ProjectItem {...project} />)}
+  <div class="flex flex-col gap-y-6">
+    {PROJECTS.map((project) => <ProjectItem {...project} />)}
+  </div>
 </SectionContainer>
